@@ -30,6 +30,7 @@
 - (void)launchCouchbaseLite
 {
     NSLog(@"Launching Couchbase Lite...");
+    [[CBLManager sharedInstance].customHTTPHeaders setObject:@"*" forKey:@"Access-Control-Allow-Origin"];
     CBLManager* dbmgr = [CBLManager sharedInstance];
     CBLRegisterJSViewCompiler();
 #if 1
